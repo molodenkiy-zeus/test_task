@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поп-ап з повідомленням</title>
+    <style>
+        /* Стили для фону */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Стили для поп-апу */
+        #popup {
+            display: none; /* Спочатку прихований */
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        #popup h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        #close-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #close-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Поп-ап вікно -->
+    <div id="popup">
+        <h1>Я зміг розв'язати цю задачу, ура!</h1>
+        <button id="close-btn">Закрити</button>
+    </div>
+
+    <script>
+        // Показуємо поп-ап через деякий час після завантаження сторінки
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "block";
+            }, 1000); // Затримка у 1 секунду
+        };
+
+        // Закриваємо поп-ап при натисканні на кнопку
+        document.getElementById("close-btn").onclick = function() {
+            document.getElementById("popup").style.display = "none";
+        };
+    </script>
+</body>
+</html>
