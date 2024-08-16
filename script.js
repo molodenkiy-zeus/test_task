@@ -11,4 +11,4 @@ function createPopup() {
     document.body.appendChild(popup);
 }
 
-window.onload = createPopup;
+createPopup;
