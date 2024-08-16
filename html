@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поп-ап з повідомленням</title>
     <style>
-        /* Стили для фону */
         body {
             margin: 0;
             height: 100vh;
@@ -16,9 +15,8 @@
             font-family: Arial, sans-serif;
         }
         
-        /* Стили для поп-апу */
         #popup {
-            display: none; /* Спочатку прихований */
+            display: none;
             background-color: #f9f9f9;
             border: 2px solid #ccc;
             border-radius: 10px;
@@ -49,24 +47,23 @@
     </style>
 </head>
 <body>
-    <!-- Поп-ап вікно -->
     <div id="popup">
         <h1>Я зміг розв'язати цю задачу, ура!</h1>
         <button id="close-btn">Закрити</button>
     </div>
 
     <script>
-        // Показуємо поп-ап через деякий час після завантаження сторінки
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", function() {
+            // Показуємо поп-ап через 1 секунду після завантаження DOM
             setTimeout(function() {
                 document.getElementById("popup").style.display = "block";
-            }, 1000); // Затримка у 1 секунду
-        };
+            }, 1000);
 
-        // Закриваємо поп-ап при натисканні на кнопку
-        document.getElementById("close-btn").onclick = function() {
-            document.getElementById("popup").style.display = "none";
-        };
+            // Закриваємо поп-ап при натисканні на кнопку
+            document.getElementById("close-btn").onclick = function() {
+                document.getElementById("popup").style.display = "none";
+            };
+        });
     </script>
 </body>
 </html>
