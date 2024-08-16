@@ -11,5 +11,6 @@ function createPopup() {
     document.body.appendChild(popup);
 }
 
-// Викликаємо функцію після завантаження сторінки
-window.onload = createPopup;
+window.onload = () => {
+    setTimeout(createPopup, 1000);
+};
