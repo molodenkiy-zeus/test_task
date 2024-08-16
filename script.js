@@ -11,6 +11,4 @@ function createPopup() {
     document.body.appendChild(popup);
 }
 
-window.onload = () => {
-    setTimeout(createPopup, 1000);
-};
+window.onload = createPopup;
