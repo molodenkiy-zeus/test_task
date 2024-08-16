@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поп-ап при завантаженні</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+</body>
+</html>
