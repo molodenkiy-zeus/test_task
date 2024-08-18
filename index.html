@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поп-ап з повідомленням</title>
     <style>
+        /* Стили для фону */
         body {
             margin: 0;
             height: 100vh;
@@ -14,22 +15,10 @@
             background-color: white;
             font-family: Arial, sans-serif;
         }
-
-        /* Напівпрозорий фон */
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Поп-ап вікно */
+        
+        /* Стили для поп-апу */
         #popup {
+            display: none; /* Спочатку прихований */
             background-color: #f9f9f9;
             border: 2px solid #ccc;
             border-radius: 10px;
@@ -52,7 +41,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            text-decoration: none;
         }
 
         #close-btn:hover {
@@ -61,12 +49,24 @@
     </style>
 </head>
 <body>
-    <!-- Напівпрозорий фон і поп-ап вікно -->
-    <div id="overlay">
-        <div id="popup">
-            <h1>Я зміг розв'язати цю задачу, ура!</h1>
-            <a id="close-btn" href="#">Закрити</a>
-        </div>
+    <!-- Поп-ап вікно -->
+    <div id="popup">
+        <h1>Я зміг розв'язати цю задачу, ура!</h1>
+        <button id="close-btn">Закрити</button>
     </div>
+
+    <script>
+        // Показуємо поп-ап через деякий час після завантаження сторінки
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "block";
+            }, 1000); // Затримка у 1 секунду
+        };
+
+        // Закриваємо поп-ап при натисканні на кнопку
+        document.getElementById("close-btn").onclick = function() {
+            document.getElementById("popup").style.display = "none";
+        };
+    </script>
 </body>
 </html>
